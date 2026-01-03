@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Beautiful weather app with real-time data, search functionality, and recent searches">
+    <title>Weather App - Real-time Weather Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="bg-gradient"></div>
+        <div class="bg-pattern"></div>
+
+        <main class="main-content">
+            <div class="weather-card">
+                <!-- Header -->
+                <header class="app-header">
+                    <h1 class="app-title">
+                        <span class="icon-weather">☀️</span>
+                        Weather Now
+                    </h1>
+                    <p class="app-subtitle">Real-time weather information worldwide</p>
+                </header>
+
+                <!-- Search Section -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" id="cityInput" class="search-input" placeholder="Search for a city..."
+                            autocomplete="off">
+                        <button id="searchBtn" class="search-btn">
+                            <span class="search-icon">🔍</span>
+                            Search
+                        </button>
+                    </div>
+                    <div id="searchError" class="error-message"></div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state hidden">
+                    <div class="loader"></div>
+                    <p class="loading-text">Fetching weather data...</p>
+                </div>
+
+                <!-- Weather Display -->
+                <div id="weatherDisplay" class="weather-display hidden">
+                    <div class="weather-main">
+                        <div class="location-info">
+                            <h2 id="cityName" class="city-name"></h2>
+                            <p id="country" class="country"></p>
+                        </div>
+
+                        <div class="temperature-section">
+                            <div class="temp-main">
+                                <span id="temperature" class="temperature"></span>
+                                <span class="temp-unit">°C</span>
+                            </div>
+                            <div class="weather-icon-container">
+                                <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+                            </div>
+                        </div>
+
+                        <div id="weatherDescription" class="weather-description"></div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <div class="detail-icon">💧</div>
+                            <div class="detail-info">
+                                <p class="detail-label">Humidity</p>
+                                <p id="humidity" class="detail-value"></p>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">💨</div>
+                            <div class="detail-info">
+                                <p class="detail-label">Wind Speed</p>
+                                <p id="windSpeed" class="detail-value"></p>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">🌡️</div>
+                            <div class="detail-info">
+                                <p class="detail-label">Feels Like</p>
+                                <p id="feelsLike" class="detail-value"></p>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="detail-icon">🔽</div>
+                            <div class="detail-info">
+                                <p class="detail-label">Pressure</p>
+                                <p id="pressure" class="detail-value"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Searches -->
+                <div id="recentSearches" class="recent-searches hidden">
+                    <h3 class="recent-title">Recent Searches</h3>
+                    <div id="recentList" class="recent-list"></div>
+                    <button id="clearRecent" class="clear-btn">Clear All</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Built by Kunal</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
